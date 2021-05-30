@@ -13,13 +13,13 @@ def stockCalculation():
   amount = int(request.args['amount'])
   df = pd.read_excel('Stock/'+time+'.xlsx')
   vals = df.values[:5]
-  results = []
+  results = dict()
   for i in range(5):
     k = dict()
     k['Ticker'] = vals[i][1]
     k['Percent'] = vals[i][0]
     k['Amount'] = amount+(amount*float(vals[i][0]))/100
-    results.append(k)
+    results[i] = k
   return results
 
 @app.route('/plot/', methods=['GET'])
@@ -28,11 +28,11 @@ def plotCalculation():
   amount = int(request.args['amount'])
   df = pd.read_excel('Plot/'+time+'.xlsx')
   vals = df.values[:5]
-  results = []
+  results = dict()
   for i in range(5):
     k = dict()
     k['Ticker'] = vals[i][1]
     k['Percent'] = vals[i][0]
     k['Amount'] = amount+(amount*float(vals[i][0]))/100
-    results.append(k)
+    results[i] = k
   return results
