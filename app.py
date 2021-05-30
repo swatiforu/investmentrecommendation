@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/stock/', methods=['GET'])
 def stockCalculation():
-  time = requests.args['time']
+  time = request.args['time']
   amount = request.args['amount']
   df = pd.read_excel('Stock'+time+'.xlsx')
   vals = df.values[:5]
@@ -24,7 +24,7 @@ def stockCalculation():
 
 @app.route('/plot/', methods=['GET'])
 def plotCalculation():
-  time = requests.args['time']
+  time = request.args['time']
   amount = request.args['amount']
   df = pd.read_excel('Plot/'+time+'.xlsx')
   vals = df.values[:5]
