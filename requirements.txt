@@ -1,0 +1,7 @@
+flask
+pandas
+gunicorn
+numpy==1.19.5
+openpyxl
+xlrd
+flask-cors
