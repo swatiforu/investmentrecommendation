@@ -31,8 +31,8 @@ def plotCalculation():
   results = dict()
   for i in range(5):
     k = dict()
-    k['Ticker'] = vals[i][1]
-    k['Percent'] = vals[i][0]
+    k['Ticker'] = vals[i][0]
+    k['Percent'] = vals[i][1]
     k['Amount'] = amount+(amount*float(vals[i][0]))/100
     results[i] = k
   return results
