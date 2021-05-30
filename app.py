@@ -26,7 +26,7 @@ def stockCalculation():
 def plotCalculation():
   time = requests.args['time']
   amount = request.args['amount']
-  df = pd.read_excel('Plot/'time+'.xlsx')
+  df = pd.read_excel('Plot/'+time+'.xlsx')
   vals = df.values[:5]
   results = []
   for i in range(5):
