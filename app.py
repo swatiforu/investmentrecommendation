@@ -11,7 +11,7 @@ CORS(app)
 def stockCalculation():
   time = request.args['time']
   amount = request.args['amount']
-  df = pd.read_excel('Stock'+time+'.xlsx')
+  df = pd.read_excel('Stock/'+time+'.xlsx')
   vals = df.values[:5]
   results = []
   for i in range(5):
