@@ -18,7 +18,7 @@ def stockCalculation():
     k = dict()
     k['Ticker'] = vals[i][1]
     k['Percent'] = vals[i][0]
-    k['Amount'] = amount+(amount*float(vals[i][0]))/100
+    k['Amount'] = amount+(amount*float(vals[i][0].replace(',' , '')))/100
     results[i] = k
   return results
 
