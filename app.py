@@ -12,7 +12,7 @@ def stockCalculation():
   time = str(request.args['time'])
   amount = int(request.args['amount'])
   df = pd.read_excel('Stock/'+time+'.xlsx')
-  df['Percent'] = pd.to_numeric(df['Percent'])
+  df['Percentage'] = pd.to_numeric(df['Percent'])
   vals = df.values[:5]
   results = dict()
   for i in range(5):
