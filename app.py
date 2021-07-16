@@ -18,7 +18,7 @@ def stockCalculation():
   for i in range(5):
     k = dict()
     k['Ticker'] = vals[i][1]
-    k['Percent'] = vals[i][0]
+    k['Percent'] = "{:.2f}".format(float(vals[i][0]))
     k['Amount'] = changer(amount+(amount*float(vals[i][0]))/100)
     results[i] = k
   return results
@@ -33,7 +33,7 @@ def plotCalculation():
   for i in range(5):
     k = dict()
     k['Ticker'] = vals[i][0]
-    k['Percent'] = vals[i][1]
+    k['Percent'] = "{:.2f}".format(float(vals[i][1]))
     k['Amount'] = changer(amount+(amount*float(vals[i][1]))/100)
     results[i] = k
   return results
